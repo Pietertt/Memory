@@ -1,0 +1,35 @@
+﻿<Window x:Class="Memory.loadGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Memory"
+        mc:Ignorable="d"
+        Title="loadGame" Height="450" Width="800" ResizeMode="NoResize">
+    <Canvas>
+        <ListView Margin="10" Name="savedgames">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Players" Width="120" DisplayMemberBinding="{Binding Players}"/>
+                    <GridViewColumn Header="Score 1" Width="60" DisplayMemberBinding="{Binding Score1}" />
+                    <GridViewColumn Header="Score 2" Width="60" DisplayMemberBinding="{Binding Score2}" />
+                    <GridViewColumn Header="Turn" Width="120" DisplayMemberBinding="{Binding Turn}" />
+                    <GridViewColumn Header="">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Button Style="{ StaticResource smallButton }" Tag="{ Binding metaData }" Content="Laden" Click="LoadGame"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="button_go_back" Click="goBack" Style="{ StaticResource buttonStyle }" Canvas.Top="36" Canvas.Right="36">Terug</Button>
+        <Button x:Name="button_clear_games" Click="clearGames" Style="{ StaticResource buttonStyle }" Canvas.Top="132" Canvas.Right="36">Reset</Button>
+        <Canvas.Background>
+            <ImageBrush ImageSource="Images\BgImages\load_background.jpg" Stretch="Fill"/>
+        </Canvas.Background>
+    </Canvas>
+</Window>

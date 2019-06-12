@@ -1,0 +1,19 @@
+﻿<Window x:Class="Memory.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Memory"
+        mc:Ignorable="d"
+        Title="Memory Game" Height="612" Width="782" ResizeMode="NoResize" Left="50" Top="50">
+    <Canvas x:Name="canvas_game">
+        <Grid x:Name="GameGrid" Height="572" Width="550" HorizontalAlignment="Left">
+
+        </Grid>
+        <Button x:Name="button_back_go" Click="goBack" Style="{ StaticResource buttonStyle }" Canvas.Top="36" Canvas.Right="36">Terug</Button>
+        <Button x:Name="button_shuffle" Click="shuffle" Style="{ StaticResource buttonStyle }" Canvas.Top="132" Canvas.Right="36">Reset</Button>
+        <Label x:Name="label_player1" Canvas.Left="570" Canvas.Top="218" Style="{ StaticResource smallLabel }">sdsd</Label>
+        <Label x:Name="label_player2" Canvas.Left="570" Canvas.Top="270" Style="{ StaticResource smallLabel }">kjoioi</Label>
+        <Label x:Name="label_turn" Canvas.Left="570" Canvas.Top="322" Style="{ StaticResource smallLabel }"></Label>
+    </Canvas>
+</Window>
